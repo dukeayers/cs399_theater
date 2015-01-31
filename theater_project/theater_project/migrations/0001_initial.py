@@ -14,7 +14,6 @@ class Migration(migrations.Migration):
             name='Info',
             fields=[
                 ('id', models.AutoField(verbose_name='ID', primary_key=True, serialize=False, auto_created=True)),
-                ('rating', models.CharField(max_length=3)),
                 ('title', models.CharField(max_length=200)),
                 ('description', models.CharField(max_length=400)),
                 ('thumbnail', models.CharField(max_length=400)),

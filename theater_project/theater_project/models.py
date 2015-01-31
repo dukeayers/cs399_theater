@@ -6,7 +6,6 @@ class Movie(models.Model):
     time = models.CharField(max_length = 30)
 
 class Info(models.Model):
-    rating = models.CharField(max_length = 3)
     title = models.CharField(max_length = 200)
     description = models.CharField(max_length = 400)
     thumbnail = models.CharField(max_length = 400)
