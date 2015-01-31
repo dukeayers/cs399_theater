@@ -31,16 +31,17 @@
         <div class="col-xs-5 text-center">
             <p style="margin-top:10px; color:white;"><span class="glyphicon-earphone glyphicon"></span>1-999-555-5555</p>
             <div class="col-xs-6 col-xs-offset-3">
-                            <select class="form-control" name="" id="">
-                <option value="None" selected>Choose A Movie</option>
+                            <select class="form-control movie-list" name="" id="" >
+                                <option value="None" selected>Choose A Movie</option>
                                 {% for movie in all_movies %}
-                                    <option value="{{ movie.title }}">{{ movie.title }}</option>
+                                    <option value="movie_{{ movie.id }}"   >{{ movie.title }}</option>
                                 {% endfor %}
             </select>
             </div>
 
         </div>
     </div>
+{#Navbar is below#}
     <nav class="navbar navbar-default navbar-inverse" style="margin-left: -11px; width:102%;">
   <div class="container-fluid" style="padding-left: 0 !important;">
     <!-- Brand and toggle get grouped for better mobile display -->
@@ -56,19 +57,18 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1" style="padding-left:0 !important;">
       <ul class="nav navbar-nav navbar-left">
-        <li class="active" id=""><a href="#" id="currentActive">Home <span class="sr-only">(current)</span></a></li>
-        <li><a href="/showtimes">Showtimes</a></li>
-        <li><a href="/movies">Movies</a></li>
-        <li><a href="/events">Events</a></li>
-        <li><a href="/store">Store</a></li>
-        <li><a href="/team">Our Team</a></li>
+        <li class="navbar-link" id=""><a href="/" id="currentActive">Home <span class="sr-only">(current)</span></a></li>
+        <li class="navbar-link"><a href="/showtimes">Showtimes</a></li>
+        <li class="navbar-link"><a href="/movies">Movies</a></li>
+        <li class="navbar-link"><a href="/events">Events</a></li>
+        <li class="navbar-link"><a href="/store">Store</a></li>
+        <li class="navbar-link"><a href="/team">Our Team</a></li>
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
 </div>
-
-    {% block content %}
+{% block content %}
 {#        Any content specific to the base page (i.e. a navbar, footer, sidebar) should go in this area. #}
 
     {% endblock %}
@@ -83,5 +83,51 @@
 {#            Any JavaScript specific to this page will come here.  #}
         {% endblock %}
     </script>
+<script>
+    $(document).ready(function(){
+        $('.movie-list').change(function() {
+            if ($('.movie-list').val() != 'None'){
+                console.log($('.movie-list').val())
+                $('#myModal').modal('toggle');
+                $('.' + $('.movie-list').val() +'').removeClass('hide');
+               console.log($(this).find('option:selected').attr('class'));
+            }
+        })
+        $('#myModal').on('hide.bs.modal', function () {
+            $('.allMovies').addClass('hide');
+        })
+
+
+    });
+
+</script>
+
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-body">
+        {% for movie in all_movies %}
+            <div class="hide allMovies movie_{{ movie.id }}">
+                <h2 >{{ movie.title }}</h2>
+                <hr/>
+                <div class="row">
+                    <div class="col-xs-12 text-center">
+                        <img class="img-responsive center-block" src="http://placehold.it/350x150">
+                    </div>
+                </div>
+                <div class="text-center row" style="margin-top:10px;">
+                    <div>{{ movie.description }}</div>
+                </div>
+            </div>
+
+        {% endfor %}
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" onclick="window.location.href=('/showtimes')">Showtimes</button>
+      </div>
+    </div>
+  </div>
+</div>
 </body>
 </html>
