@@ -1,16 +1,145 @@
 {% extends "base.html" %}
 
 {% block page_style %}
-{#    Any CSS specific to this page will go inside of this block.   #}
+<style>
+
+body 
+{
+	background-color:#fff;
+	height: 100%;
+}
+
+#container {
+	min-height: 100%;
+	height: auto !important;
+	height: 100%;
+	margin: 0 auto -2em;
+}
+
+h1 {
+	color: #000;
+	font-size: 30px;
+	margin: 30px 0 0 0;
+	padding: 10px 0 10px 0;
+	font-family: "Comic Sans MS", cursive, sans-serif;
+	background-color: inherit;
+	text-align: center;
+}
+
+h2 {
+	color: #000;
+	font-size: 20px;
+	font-family: "Comic Sans MS", cursive, sans-serif;
+	text-align: left;
+}
+
+p {
+	padding: 0 0 10px 0;
+	margin: 0;
+	line-height: 2em;
+}
+
+#narrowContent {
+	width: 400px;
+	margin: 0;
+	padding: 0 0 20px 0;
+}
+span {
+	font-size:12px;
+	font-family: Century Gothic, Verdana, Arial, Sans-Serif;
+}
+
+.content { 
+   font-family: Courier;
+   font-size: 16px;
+   color: black;
+}
+
+#place {
+	height: 150px;
+	width: 100px;
+	background-color: #000;
+}
+
+</style>
+
 
 {% endblock %}
 
 {% block content %}
 
-{#    Any content associated with the page will go inside of this block.    #}
-    <div class="container" style="background:white; border-radius:5px;">
-        <h3>Team content will go here</h3>
-    </div>
+<div id= "container">
+
+<h1>Our Team</h1><br><Br>
+<table border=0 align="center">
+<tr>
+<td height="150" width="100" valign="top">
+<div id="place"></div>
+</td>
+<td>
+<div id="narrowContent">
+<h2>Duke Ayers</h2>
+<span><p>Lorem ipsum dolor sit amet, sea wisi deserunt te, te has nusquam commune reprimique. Te nostro ullamcorper instructior cum. Id inimicus vituperata eum. Ne nec percipit nominati vulputate, justo zril ad sit. Mei erant scripta ex, atqui simul per an.</p></span>
+</div>
+</td>
+
+<td height="150" width="100" valign="top" style="padding-left: 50px;">
+<div id="place"></div>
+</td>
+<td>
+<div id="narrowContent">
+<h2>Nancy McCollough</h2>
+<span><p>Lorem ipsum dolor sit amet, sea wisi deserunt te, te has nusquam commune reprimique. Te nostro ullamcorper instructior cum. Id inimicus vituperata eum. Ne nec percipit nominati vulputate, justo zril ad sit. Mei erant scripta ex, atqui simul per an.</p></span>
+</div>
+</td>
+
+
+</tr>
+<tr>
+<td height="150" width="100" valign="top">
+<div id="place"></div>
+</td>
+<td>
+<div id="narrowContent">
+<h2>David Miller</h2>
+<span><p>Lorem ipsum dolor sit amet, sea wisi deserunt te, te has nusquam commune reprimique. Te nostro ullamcorper instructior cum. Id inimicus vituperata eum. Ne nec percipit nominati vulputate, justo zril ad sit. Mei erant scripta ex, atqui simul per an.</p></span>
+</div>
+</td>
+
+<td height="150" width="100" valign="top" style="padding-left: 50px;">
+<img src="{{ STATIC_URL }}ProfilePics/Leah.png" height="100%" width="100%" alt="Leah Kalush"/>
+</td>
+<td>
+<div id="narrowContent">
+<h2>Leah Kalush</h2>
+<span><p>Lorem ipsum dolor sit amet, sea wisi deserunt te, te has nusquam commune reprimique. Te nostro ullamcorper instructior cum. Id inimicus vituperata eum. Ne nec percipit nominati vulputate, justo zril ad sit. Mei erant scripta ex, atqui simul per an.</p></span>
+</div>
+</td>
+
+
+</tr>
+<tr>
+<td height="150" width="100" valign="top">
+<div id="place"></div>
+</td>
+<td>
+<div id="narrowContent">
+<h2>Abdulaziz Alhawas</h2>
+<span><p>Lorem ipsum dolor sit amet, sea wisi deserunt te, te has nusquam commune reprimique. Te nostro ullamcorper instructior cum. Id inimicus vituperata eum. Ne nec percipit nominati vulputate, justo zril ad sit. Mei erant scripta ex, atqui simul per an.</p></span>
+</div>
+</td>
+</tr>
+
+<tr>
+<td colspan="4">
+<h1>Now Hiring!</h1>
+<div align=center><span>Would you like to join our friendly family?  Contact ...</span></div>
+</td>
+</tr>
+</table>
+
+</div>
+<br><br><br>
 
 {% endblock %}
 
