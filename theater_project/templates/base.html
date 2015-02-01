@@ -5,6 +5,7 @@
     <title>{% block title %} Theater Project {% endblock %}</title>
     <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css"/>
     <link rel="stylesheet" type="text/css" href="{{STATIC_URL}}master.css"/>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:600' rel='stylesheet' type='text/css'>
     {% block css_links %}
 
 {#        Any extra CSS links that every page should use will go inside of this block.  #}
@@ -27,10 +28,10 @@
             <img class="social-image" style="cursor:pointer;" src="{{ STATIC_URL }}social-icons/youtube-2.png" height="32" width="32" alt=""/>
         </div>
         <div class="col-xs-2 text-center " style="color:white;">
-            <h2>Sharkins Theatres</h2>
+            <h2 style="font-family: 'Open Sans', sans-serif !important; ">Sharkins Theatres</h2>
         </div>
         <div class="col-xs-5 text-center">
-            <p style="margin-top:10px; color:white;"><span class="glyphicon-earphone glyphicon"></span>1-999-555-5555</p>
+            <p style="margin-top:10px; color:white; cursor:pointer;"><span class="glyphicon-earphone glyphicon" style="margin-right:5px;"></span>1-999-555-5555</p>
             <div class="col-xs-6 col-xs-offset-3">
                             <select class="form-control movie-list" name="" id="" >
                                 <option value="None" selected>Choose A Movie</option>
