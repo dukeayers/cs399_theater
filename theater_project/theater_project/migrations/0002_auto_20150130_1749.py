@@ -18,15 +18,18 @@ def add_data(apps, schema_editor):
     #Pre-config'd Descriptions according to each movie.
     Descr = ["A great movie about how Duke aspires to become something like his greatest heroes of all time. This may seem like another sad, unfortunate story of how Duke never actually gets his aspirations but it all gets better with the Mountain Dew and Doritos.", "Null", "Null", "Null", "Null"]
     #paths of each picture once we get them
-    ThumbLocation = ["#", "#", "#", "#", "#"]
-
+    ThumbLocation = ["movie-pictures/dukehero.jpg", "http://placehold.it/350x250", "http://placehold.it/350x250", "http://placehold.it/350x250", "http://placehold.it/350x250"]
+    #list of durations for the movies
+    Durations = ["121", "null", "null", "null", "null"]
+    #rating of each movie
+    Ratings = ["PG - 13", "null", "null", "null", "null"]
     Items = ["Movie Ticket", "Souvenir Cup", "Large Popcorn", "Theater T-Shirt", "Medium Popcorn", "Candy"]
     Prices = ["$6.00", "$5.00", "$3.00", "$20.00", "$3.00", "$4.00"]
     ItemDescr = ["A general movie ticket for any movie you would like to see.", "A refillable cup that allows for 50 cent refills!", "Popcorn, but large!", "An awesome gift idea for any of your friends! Nevermind that it is literally made out of stale popcorn and the dreams of failed actors/actresses!", "Popcorn, but in a medium container!", "Did... Did someone just say... Candy? Oh.. I'm in."]
 
     #Seeds all of our data for the Movie Table
     for i in Time1:
-        data = Movie(title = Titles[0], time = i)
+        data = Movie(title = Titles[0],  time = i)
         data.save()
 
     for i in Time2:
@@ -47,7 +50,7 @@ def add_data(apps, schema_editor):
 
 #Seeds all of our data for the Info table
     for i in range(0, 5):
-        data = Info(title = Titles[i], description = Descr[i], thumbnail = ThumbLocation[i])
+        data = Info(title = Titles[i], description = Descr[i], thumbnail = ThumbLocation[i], rating = Ratings[i], duration = Durations[i])
         data.save()
 
     for i in range(0, 6):
