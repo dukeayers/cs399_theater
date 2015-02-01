@@ -15,7 +15,14 @@
         {% for movie in all_movies %}
         <div class="row" style="margin-bottom:30px;">
             <div class="col-xs-4">
+            {% if movie.thumbnail == "http://placehold.it/350x250" %}
                 <img src="http://placehold.it/350x250" class="img-responsive" alt=""/>
+
+            {% endif %}
+            {% if movie.thumbnail != "http://placehold.it/350x250" %}
+
+                 <img src="{{ STATIC_URL }}{{ movie.thumbnail }}" class="img-responsive" alt=""/>
+            {% endif %}
             </div>
             <div class="col-xs-6">
                 <h3 style="font-weight:800;">{{ movie.title }}</h3>
