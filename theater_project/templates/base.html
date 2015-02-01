@@ -24,6 +24,7 @@
         <div class="col-xs-5 text-center" style="margin-top: 30px;">
             <img class="social-image" style="cursor:pointer;"  src="{{ STATIC_URL }}social-icons/twitter.png" height="32" width="32" alt=""/>
             <img class="social-image" style="cursor:pointer;" src="{{ STATIC_URL }}social-icons/facebook.png" height="32" width="32" alt=""/>
+            <img class="social-image" style="cursor:pointer;" src="{{ STATIC_URL }}social-icons/youtube-2.png" height="32" width="32" alt=""/>
         </div>
         <div class="col-xs-2 text-center " style="color:white;">
             <h2>Sharkins Theatres</h2>
@@ -112,7 +113,14 @@
                 <hr/>
                 <div class="row">
                     <div class="col-xs-12 text-center">
-                        <img class="img-responsive center-block" src="http://placehold.it/350x150">
+                        {% if movie.thumbnail == "http://placehold.it/350x250" %}
+                            <img src="http://placehold.it/350x250" class="img-responsive center-block" alt=""/>
+
+                        {% endif %}
+                        {% if movie.thumbnail != "http://placehold.it/350x250" %}
+
+                            <img src="{{ STATIC_URL }}{{ movie.thumbnail }}" class="img-responsive center-block" height="200" width="200" alt=""/>
+                        {% endif %}
                     </div>
                 </div>
                 <div class="text-center row" style="margin-top:10px;">
