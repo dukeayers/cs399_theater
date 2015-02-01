@@ -9,7 +9,21 @@
 
 {#    Any content associated with the page will go inside of this block.    #}
     <div class="container" style="background:white; border-radius:5px;">
-        <h3>Movie content will go here</h3>
+        <h3>Movie Details</h3>
+        <hr/>
+
+        {% for movie in all_movies %}
+        <div class="row" style="margin-bottom:30px;">
+            <div class="col-xs-4">
+                <img src="http://placehold.it/350x250" class="img-responsive" alt=""/>
+            </div>
+            <div class="col-xs-6">
+                <h3 style="font-weight:800;">{{ movie.title }}</h3>
+                <p>{{movie.description  }}</p>
+            </div>
+        </div>
+        <hr/>
+        {% endfor %}
     </div>
 
 {% endblock %}
