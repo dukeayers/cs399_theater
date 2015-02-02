@@ -29,7 +29,7 @@ Showtimes
 
 Events
 
-Store
+Store - claimed by Abdul
 
 Our Team - Hiring?- Claimed by Leah 
 
