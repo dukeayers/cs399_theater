@@ -21,7 +21,7 @@ Store
 Pages to be done:
 --------
 
-Index - Contact Us, About Us
+Index - Contact Us, About Us - claimed by Nancy
 
 Movies
 
