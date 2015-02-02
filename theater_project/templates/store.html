@@ -12,17 +12,19 @@
 
 {#    Any content associated with the page will go inside of this block.    #}
     <div class="container" style="background:white; border-radius:5px;">
-        <h3>in store now</h3>
+        <h3>Current Deals</h3>
     <hr/>
     {% for item in store_item %}
         <div class="row" style="margin-bottom:30px;">
-
+            <div class="col-xs-3">
+              <img src="{{ STATIC_URL }}{{ item.thumbnail }}" class="img-responsive"  align="left"alt=""/>
+            </div>
             <div class="col-xs-6">
                 <h3 style="font-weight:800;">{{ item.item }}</h3>
-               <p> <img src="{{ STATIC_URL }}{{ item.thumbnail }}" class="img-responsive" height="50%" width="50%" align="left"alt=""/>
-                {{item.description  }}</p>
+                {{item.description  }}
                <p> {{item.price  }}</p>
-                   <input class= "input" type="number" value="quantity" /> <button type="button">Add to cart</button></p>
+                   <input class= "input" type="number" value="quantity" />
+                <button type="button" class="btn btn-primary" style="background:#27ae60 !important; border:1px solid #27ae60 !important;">Add to cart</button></p>
             </div>
         </div>
         <hr/>
