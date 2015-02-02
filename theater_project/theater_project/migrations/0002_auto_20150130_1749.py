@@ -26,6 +26,7 @@ def add_data(apps, schema_editor):
     Items = ["Movie Ticket", "Souvenir Cup", "Large Popcorn", "Theater T-Shirt", "Medium Popcorn", "Candy"]
     Prices = ["$6.00", "$5.00", "$3.00", "$20.00", "$3.00", "$4.00"]
     ItemDescr = ["A general movie ticket for any movie you would like to see.", "A refillable cup that allows for 50 cent refills!", "Popcorn, but large!", "An awesome gift idea for any of your friends! Nevermind that it is literally made out of stale popcorn and the dreams of failed actors/actresses!", "Popcorn, but in a medium container!", "Did... Did someone just say... Candy? Oh.. I'm in."]
+    ThumbLocationStore = ["store_items/ticket.jpg", "store_items/cup.JPG", "store_items/largepop.jpg", "store_items/tshirt.jpg", "store_items/medpop.jpg", "store_items/candy.jpg"]
 
     #Seeds all of our data for the Movie Table
     for i in Time1:
@@ -54,7 +55,7 @@ def add_data(apps, schema_editor):
         data.save()
 
     for i in range(0, 6):
-        data = Store(item = Items[i], description = ItemDescr[i], price = Prices[i])
+        data = Store(item = Items[i], description = ItemDescr[i], price = Prices[i], thumbnail = ThumbLocationStore[i])
         data.save()
 
 class Migration(migrations.Migration):

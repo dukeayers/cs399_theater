@@ -43,6 +43,7 @@ class Migration(migrations.Migration):
                 ('item', models.CharField(max_length=100)),
                 ('description', models.CharField(max_length=300)),
                 ('price', models.CharField(max_length=40)),
+                ('thumbnail', models.CharField(max_length=400)),
             ],
             options={
             },
