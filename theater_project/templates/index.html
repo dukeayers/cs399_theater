@@ -10,6 +10,13 @@
 {#    Any content associated with the page will go inside of this block.    #}
     <div class="container" style="background:white; border-radius:5px;">
         <h3>Index content will go here</h3>
+		
+		{% for movie in all_movies %}
+			
+			<img src="{{ STATIC_URL }}{{ movie.thumbnail }}" class="img-responsive" alt="" width="200"/>
+		
+		{% endfor %}
+		
     </div>
 
 {% endblock %}

@@ -18,7 +18,7 @@ def add_data(apps, schema_editor):
     #Pre-config'd Descriptions according to each movie.
     Descr = ["A great movie about how Duke aspires to become something like his greatest heroes of all time. This may seem like another sad, unfortunate story of how Duke never actually gets his aspirations but it all gets better with the Mountain Dew and Doritos.", "Null", "Null", "Null", "Null"]
     #paths of each picture once we get them
-    ThumbLocation = ["movie-pictures/dukehero.jpg", "http://placehold.it/350x250", "http://placehold.it/350x250", "http://placehold.it/350x250", "http://placehold.it/350x250"]
+    ThumbLocation = ["movie-pictures/dukehero.png", "http://placehold.it/350x250", "http://placehold.it/350x250", "http://placehold.it/350x250", "http://placehold.it/350x250"]
     #list of durations for the movies
     Durations = ["121", "null", "null", "null", "null"]
     #rating of each movie
