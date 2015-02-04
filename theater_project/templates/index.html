@@ -2,13 +2,26 @@
 
 {% block page_style %}
 {#    Any CSS specific to this page will go inside of this block.   #}
-
+ html { height: 100% }
+  body { height: 100%; margin: 0; padding: 0 }
+  #map-canvas { height: 100% }
 {% endblock %}
 
 {% block content %}
 
 {#    Any content associated with the page will go inside of this block.    #}
-    <div class="container" style="background:white; border-radius:5px;">
+    <div  class="container" style="background:white; border-radius:5px;">
+    <div class="row">
+        <div class="col-xs-4 col-xs-offset-2 text-center">
+            <h2>Our Location</h2>
+            <div id="map-canvas" style="height:300px;"></div>
+        </div>
+        <div class="col-xs-4 text-center">
+            <h2>Driving Directions</h2>
+
+        </div>
+    </div>
+
         <h3>Index content will go here</h3>
 		
 		{% for movie in all_movies %}
@@ -16,11 +29,32 @@
 			<img src="{{ STATIC_URL }}{{ movie.thumbnail }}" class="img-responsive" alt="" width="200"/>
 		
 		{% endfor %}
-		
+
     </div>
 
 {% endblock %}
 
 {% block js %}
+    $(document).ready(function(){
+        $(window).load(function(){
+            initialize();
+        });
+            function initialize() {
+            var mapOptions = {
+              center: { lat: 35.1812076, lng: -111.607959},
+              zoom: 10
+            };
+            var map = new google.maps.Map(document.getElementById('map-canvas'),
+                mapOptions);
+            var marker = new google.maps.Marker({
+              position:{ lat: 35.190327, lng: -111.653878},
+              map: map,
+              title: 'Sharkins Theatre'
+          });
+          }
+      google.maps.event.addDomListener(window, 'load', initialize);
+    });
+
+
 {#    Insert any JavaScript here         #}
 {% endblock %}
