@@ -3,9 +3,11 @@ Todo List
 * Footer
 * Finish Index Page
 * Add details about other movies
+* Add details about team members - to each their own
 * Create Events (this can be hard-coded) - Claimed by Leah
 * Location added to index page - Duke will do
 * Directions added to index page - up for grabs
+* Image credits in page footers - David will RIS on google. If you added an image without credit, find the source if possible
 
 
 
