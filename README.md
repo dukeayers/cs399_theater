@@ -3,7 +3,7 @@ Todo List
 * Footer
 * Finish Index Page
 * Add details about other movies
-* Create Events (this can be hard-coded)
+* Create Events (this can be hard-coded) - Claimed by Leah
 * Location added to index page - Duke will do
 * Directions added to index page - up for grabs
 

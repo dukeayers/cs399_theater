@@ -1,16 +1,81 @@
 {% extends "base.html" %}
 
 {% block page_style %}
-{#    Any CSS specific to this page will go inside of this block.   #}
+
+.page-header {
+	border-bottom: none;
+}
 
 {% endblock %}
 
 {% block content %}
 
-{#    Any content associated with the page will go inside of this block.    #}
-    <div class="container" style="background:white; border-radius:5px;">
-        <h3>Event content will go here</h3>
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Theater Events</title>
+        <link href="../../dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="sticky-footer.css" rel="stylesheet">
+
+    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+    <script src="../../assets/js/ie-emulation-modes-warning.js"></script>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+
+    <!-- Begin page content -->
+    <div class="container">
+      <div class="page-header">
+        <h1 style="text-align: center;">Upcoming Events</h1>
+      </div>
+      <span class="lead" style="font-size: 25px;">Children's Film Marathon</span><br>
+	<span class="lead" style="font-size: 20px;">Date: June 5th, 2015 12pm-5pm</span><br><br>
+	<table border="0" width="850">
+	<tr>
+	<td style="padding-right: 50px;"><img src="{{ STATIC_URL }}event-icons/children.png" alt= "" height="200" width="200"></td>
+	<td>This summer our theater is holding a special marathon of family movies for your entertainment.  This marathon includes movies you all know and love including: How to Train Your Dragon, Despicable Me and The Lego Movie!  Children's tickets are $3.00 and adults are $5.00.  Don't miss out on this evening of fun!<br><a href="/store">Buy Tickets</a> </td>
+	</tr>
+	</table>
+	<br><br><br>
+
+<span class="lead" style="font-size: 25px;">3D Animation Film Festival</span><br>
+	<span class="lead" style="font-size: 20px;">Date: August 16th, 2015 6pm-10pm</span><br><br>
+	<table border="0" width="850">
+	<tr>
+	<td style="padding-right: 50px;"><img src="{{ STATIC_URL }}event-icons/festival.png" alt= "" height="200" width="200"></td>
+	<td>Are you a film enthusiast?  Do you have a passion for 3D animation?  If you answered yes to either question then we have some good news for you!  This coming August Sharkins Theaters is holding its first annual 3D Animation Film Festival!  Local film makers will present their finest work for your viewing pleasure all for our current ticket price.  Order your ticket today!<br><a href="/store">Buy Tickets</a> </td>
+	</tr>
+	</table>
+      
     </div>
+
+    <!--
+	<footer class="footer">
+      <div class="container">
+        <p class="text-muted">Place sticky footer content here.</p>
+      </div>
+    </footer>
+	-->
+ 
+<!-- Put just before closing body tag so pages load faster -->
+    <!-- Obtain jquery javascript library from CDN -->
+<!-- Check http://code.jquery.com/ for latest version. -->
+    <script src="http://code.jquery.com/jquery-2.1.0.min.js"></script>
+    <!-- Obtain Bootstrap javascript library from CDN (online service) so it doesn't have to be on my machine -->
+    <script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+ 
+ 
+  </body>
+</html>
 
 {% endblock %}
 
