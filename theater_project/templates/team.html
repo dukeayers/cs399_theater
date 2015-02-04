@@ -1,19 +1,13 @@
 {% extends "base.html" %}
 
 {% block page_style %}
+
 <style>
 
 body 
 {
 	background-color:#fff;
 	height: 100%;
-}
-
-#container {
-	min-height: 100%;
-	height: auto !important;
-	height: 100%;
-	margin: 0 auto -2em;
 }
 
 h1 {
@@ -30,23 +24,7 @@ h2 {
 	color: #000;
 	font-size: 20px;
 	font-family: "Comic Sans MS", cursive, sans-serif;
-	text-align: left;
-}
-
-p {
-	padding: 0 0 10px 0;
-	margin: 0;
-	line-height: 2em;
-}
-
-#narrowContent {
-	width: 400px;
-	margin: 0;
-	padding: 0 0 20px 0;
-}
-span {
-	font-size:12px;
-	font-family: Century Gothic, Verdana, Arial, Sans-Serif;
+	/*text-align: left;*/ /*disabled to default to text-center*/
 }
 
 .content { 
@@ -55,91 +33,83 @@ span {
    color: black;
 }
 
-#place {
-	height: 150px;
-	width: 100px;
-	background-color: #000;
-}
-
 </style>
-
-
 {% endblock %}
 
 {% block content %}
 
 <div id= "container">
+	<div class="row" >
 
-<h1>Our Team</h1><br><Br>
-<table border=0 align="center">
-<tr>
-<td height="150" width="100" valign="top">
-<div id="place"></div>
-</td>
-<td>
-<div id="narrowContent">
-<h2>Duke Ayers</h2>
-<span><p>Lorem ipsum dolor sit amet, sea wisi deserunt te, te has nusquam commune reprimique. Te nostro ullamcorper instructior cum. Id inimicus vituperata eum. Ne nec percipit nominati vulputate, justo zril ad sit. Mei erant scripta ex, atqui simul per an.</p></span>
+		<h2 class="intro-text text-center">Our Team Members</h2>
+
+		<div class="col-sm-4 text-center">
+			<div class="col-sm-12 text-center">
+				<div class="thumbnail">
+					<img class="img-responsive" style="margin-top: 20px; height: 150px;" src="{{ STATIC_URL }}ProfilePics\David.png" alt= "">
+					<h2>Duke Ayers</h2>
+					<p>Title</p>
+					<p style="text-align:left">Description</p>                    
+				</div>
+			</div>
+
+			<div class="col-sm-12 text-center">
+	
+				<div class="thumbnail">
+					<img class="img-responsive" style="margin-top: 20px; height: 150px;" src="{{ STATIC_URL }}ProfilePics\David.png" alt= "">
+					<h2>Nancy McCollough</h2>
+					<p>Title</p>
+					<p style="text-align:left">Description</p>                    
+				</div>
+			</div>
+		</div>
+
+		<div class="col-sm-4 text-center">
+			<div class="col-sm-12 text-center">
+				<div class="thumbnail">
+					<img class="img-responsive" style="margin-top: 20px; height: 150px;" src="{{ STATIC_URL }}ProfilePics\David.png" alt= "">
+					<h2>David Miller</h2>
+					<p>Snack Strategist</p>
+					<p style="text-align:left">Nobody can strategize a course of snacking like our expert Snack Strategist. If you need help strategizing your movie snack, you can count on David to strategically predict the most enjoyable 	snack for your movie. </p>                    
+				</div>
+ 			</div>
+
+			<div class="col-sm-12 text-center">
+				<div class="thumbnail">
+					<img class="img-responsive" style="margin-top: 20px; height: 150px;" src="{{ STATIC_URL }}ProfilePics\Leah.png" alt= "">
+					<h2>Leah Kalush</h2>
+					<p>Customer Service, Horror Expert</p>
+					<p style="text-align:left">An avid movie enthusiast and a specialist in the horror genre, Leah is willing and happy to help out with any concerns. Whether your popcorn is stale or you're looking to purchase a gift card, 	she is here to help with all matters.</p>                    
+				</div>
+			</div>
+		</div>
+
+		<div class="col-sm-4 text-center">
+			<div class="col-sm-12 text-center">
+				<div class="thumbnail">
+					<img class="img-responsive" style="margin-top: 20px; height: 150px;" src="{{ STATIC_URL }}ProfilePics\David.png" alt= "">
+					<h2>Abdulaziz Alhawas</h2>
+					<p>Title</p>
+					<p style="text-align:left">Description</p>                    
+				</div>
+			</div>
+		<div class="col-sm-12 text-center">
+			<div class="thumbnail">
+				<img class="img-responsive" style="margin-top: 20px; height: 150px;" src="{{ STATIC_URL }}ProfilePics\David.png" alt= "">
+					<h2>Dr. James Palmer</h2>
+					<p>Title</p>
+					<p style="text-align:left">Description</p>                    
+				</div>   
+			</div>
+		</div>
+     
+		<div class="clearfix"></div>
+
+		<h1 class="intro-text text-center">Now Hiring!</h1>
+		<h2 class="intro-text text-center">Would you like to join our friendly family?  Contact ...</h2>
+	</div>
+   
 </div>
-</td>
-
-<td height="150" width="100" valign="top" style="padding-left: 50px;">
-<div id="place"></div>
-</td>
-<td>
-<div id="narrowContent">
-<h2>Nancy McCollough</h2>
-<span><p>Lorem ipsum dolor sit amet, sea wisi deserunt te, te has nusquam commune reprimique. Te nostro ullamcorper instructior cum. Id inimicus vituperata eum. Ne nec percipit nominati vulputate, justo zril ad sit. Mei erant scripta ex, atqui simul per an.</p></span>
-</div>
-</td>
-
-
-</tr>
-<tr>
-<td height="150" width="100" valign="top">
-<div id="place"></div>
-</td>
-<td>
-<div id="narrowContent">
-<h2>David Miller</h2>
-<span><p>Lorem ipsum dolor sit amet, sea wisi deserunt te, te has nusquam commune reprimique. Te nostro ullamcorper instructior cum. Id inimicus vituperata eum. Ne nec percipit nominati vulputate, justo zril ad sit. Mei erant scripta ex, atqui simul per an.</p></span>
-</div>
-</td>
-
-<td height="150" width="100" valign="top" style="padding-left: 50px;">
-<img src="{{ STATIC_URL }}ProfilePics/Leah.png" height="100%" width="100%" alt="Leah Kalush"/>
-</td>
-<td>
-<div id="narrowContent">
-<h2>Leah Kalush</h2>
-<span><p>An avid movie enthusiast and a specialist in the horror genre, Leah is willing and happy to help out with any concerns.  Whether your popcorn is stale or you're looking to purchase a gift card, she is here to help with all matters.</p></span>
-</div>
-</td>
-
-
-</tr>
-<tr>
-<td height="150" width="100" valign="top">
-<div id="place"></div>
-</td>
-<td>
-<div id="narrowContent">
-<h2>Abdulaziz Alhawas</h2>
-<span><p>Lorem ipsum dolor sit amet, sea wisi deserunt te, te has nusquam commune reprimique. Te nostro ullamcorper instructior cum. Id inimicus vituperata eum. Ne nec percipit nominati vulputate, justo zril ad sit. Mei erant scripta ex, atqui simul per an.</p></span>
-</div>
-</td>
-</tr>
-
-<tr>
-<td colspan="4">
-<h1>Now Hiring!</h1>
-<div align=center><span>Would you like to join our friendly family?  Contact ...</span></div>
-</td>
-</tr>
-</table>
-
-</div>
-<br><br><br>
 
 {% endblock %}
 
