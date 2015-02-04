@@ -1,3 +1,15 @@
+Todo List
+---------
+* Footer
+* Finish Index Page
+* Add details about other movies
+* Create Events (this can be hard-coded)
+* Location added to index page - Duke will do
+* Directions added to index page - up for grabs
+
+
+
+
 Movie
 -------
 
