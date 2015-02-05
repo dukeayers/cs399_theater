@@ -1,6 +1,6 @@
 Todo List
 ---------
-* Footer
+* Footer -- Done by Abdul
 * Finish Index Page
 * Add details about other movies
 * Add details about team members - to each their own
