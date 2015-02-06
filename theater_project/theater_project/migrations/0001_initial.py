@@ -49,4 +49,17 @@ class Migration(migrations.Migration):
             },
             bases=(models.Model,),
         ),
+        migrations.CreateModel(
+            name='Event',
+            fields=[
+                ('id', models.AutoField(primary_key=True, auto_created=True, serialize=False, verbose_name='ID')),
+                ('title', models.CharField(max_length=100)),
+                ('date', models.CharField(max_length=100)),
+                ('image', models.CharField(max_length=200)),
+                ('descr', models.CharField(max_length=200)),
+            ],
+            options={
+            },
+            bases=(models.Model,),
+        ),
     ]

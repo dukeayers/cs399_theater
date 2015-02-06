@@ -1,13 +1,13 @@
 from django.core import serializers
 from django.http import HttpResponse
 from django.shortcuts import render
-from theater_project.models import Info, Movie , Store
+from theater_project.models import Info, Movie , Store,Event
 # Create your views here.
 def home(request):
     return render(request, 'index.html', {'all_movies': Info.objects.all()})
 
 def events(request):
-    return render(request,'events.html', {'all_movies': Info.objects.all()})
+    return render(request,'events.html', {'all_movies': Info.objects.all(), 'all_events': Event.objects.all()})
 
 def movies(request):
     return render(request,'movies.html', {'all_movies': Info.objects.all()})

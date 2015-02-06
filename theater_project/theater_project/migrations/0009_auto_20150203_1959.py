@@ -7,6 +7,7 @@ def add_data(apps, schema_editor):
     Movie = apps.get_model("theater_project", "Movie")
     Info = apps.get_model("theater_project", "Info")
     Store = apps.get_model("theater_project", "Store")
+    Event = apps.get_model("theater_project", "Event")
 
     #Pre-config'd Times for the movies
     Time1 = ['8:00 AM', '10:00 AM', '12:00 PM', '2:00 PM', '4:00 PM', '6:00 PM']
@@ -28,11 +29,23 @@ def add_data(apps, schema_editor):
     Durations = ["121", "136", "118", "139", "148"]
     #rating of each movie
     Ratings = ["PG", "PG - 13", "G", "PG - 13", "R"]
-	
+
+	#Seeded data for the store page
     Items = ["Movie Ticket", "Souvenir Cup", "Large Popcorn", "Theater T-Shirt", "Medium Popcorn", "Candy"]
     Prices = ["$6.00", "$5.00", "$3.00", "$20.00", "$3.00", "$4.00"]
     ItemDescr = ["A general movie ticket for any movie you would like to see.", "A refillable cup that allows for 50 cent refills!", "Popcorn, but large!", "An awesome gift idea for any of your friends! Nevermind that it is literally made out of stale popcorn and the dreams of failed actors/actresses!", "Popcorn, but in a medium container!", "Did... Did someone just say... Candy? Oh.. I'm in."]
     ThumbLocationStore = ["store_items/ticket.jpg", "store_items/cup.JPG", "store_items/largepop.jpg", "store_items/tshirt.jpg", "store_items/medpop.jpg", "store_items/candy.jpg"]
+
+    #Seeded data for the events page
+    eTitle = ["Children's Film Marathon", "3D Animation Film Festival"]
+    eDate = ["Date: June 5th, 2015 12pm-5pm", "Date: August 16th, 2015 6pm-10pm"]
+    eImage = ["event-icons/children.png", "event-icons/festival.png"]
+    eDescr = ["Are you a film enthusiast?  Do you have a passion for 3D animation?  If you answered yes to either question then we have some good news for you!  This coming August Sharkins Theaters is holding its first annual 3D Animation Film Festival!  Local film makers will present their finest work for your viewing pleasure all for our current ticket price.  Order your ticket today!", "This summer our theater is holding a special marathon of family movies for your entertainment.  This marathon includes movies you all know and love including: How to Train Your Dragon, Despicable Me and The Lego Movie!  Children's tickets are $3.00 and adults are $5.00.  Don't miss out on this evening of fun!"]
+
+    #Add in all of the Event data
+    for i in range(0,2):
+        data = Event(title = eTitle[i], date = eDate[i], image = eImage[i], descr = eDescr[i])
+        data.save()
 
     #Seeds all of our data for the Movie Table
     for i in Time1:
