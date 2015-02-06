@@ -8,50 +8,23 @@
 {% block content %}
 {#    Any content associated with the page will go inside of this block.    #}
     <div class="container" style="background:white; border-radius:5px;">
-        <h2>Current Showtimes</h2>
+        <h2 style="font-family: 'Open Sans', sans-serif !important; ">Current Showtimes</h2>
         <hr/>
             {% for movie in all_movies %}
 
                 <div class="row" style="margin-bottom:30px;">
-                    <div class="col-xs-4">
-                        {% if movie.thumbnail == "http://placehold.it/350x250" %}
-                            <img src="http://placehold.it/350x250" class="img-responsive" alt=""/>
-
-                        {% endif %}
-                        {% if movie.thumbnail != "http://placehold.it/350x250" %}
-
-                            <img src="{{ STATIC_URL }}{{ movie.thumbnail }}" class="img-responsive" alt=""/>
-                        {% endif %}
+                    <div class="col-xs-3 text-center">
+                        <img src="{{ STATIC_URL }}{{ movie.thumbnail }}" class="img-responsive center-block" alt=""/>
+                        <a style="margin-top:10px;" class="btn-primary btn " href="/movies">Movie Details</a>
                     </div>
                     <div class="col-xs-6">
                         <h3 style="font-weight:800;">{{ movie.title }} <span style="font-weight:normal !important; font-size:20px;">{{ movie.rating}}</span> <span style="font-weight:normal !important; font-size:17px !important;">({{ movie.duration }} mins)</span></h3>
-                    {% if movie.title == "Duke's Heroes" %}
-                        {% for time in movie_info %}
-                            <a href="">{{ time.time }}</a>
+                        {% for info in all_times %}
+                            {% if info.title == movie.title %}
+                                <a href="#" style="font-size:20px;">{{ info.time }}</a>
+                            {% endif %}
                         {% endfor %}
-                    {% endif %}
-                    {% if movie.title == "Movie2" %}
-                        {% for time in movie_info2 %}
-                            <a href="">{{ time.time }}</a>
-                        {% endfor %}
-                    {% endif %}
-                    {% if movie.title == "Movie3" %}
-                        {% for time in movie_info3 %}
-                            <a href="">{{ time.time }}</a>
-                        {% endfor %}
-                    {% endif %}
-                    {% if movie.title == "Movie4" %}
-                        {% for time in movie_info4 %}
-                            <a href="">{{ time.time }}</a>
-                        {% endfor %}
-                    {% endif %}
-                    {% if movie.title == "Movie5" %}
-                        {% for time in movie_info5 %}
-                            <a href="">{{ time.time }}</a>
-                        {% endfor %}
-                    {% endif %}
                     </div>
-
                 </div>
                 <hr/>
         {% endfor %}

@@ -13,7 +13,8 @@ def movies(request):
     return render(request,'movies.html', {'all_movies': Info.objects.all()})
 
 def showtimes(request):
-    return render(request,'showtimes.html', {'all_movies': Info.objects.all(), 'movie_info': Movie.objects.filter(title="Duke's Heroes"), 'movie_info2': Movie.objects.filter(title="Movie3"), 'movie_info3': Movie.objects.filter(title="Movie3"), 'movie_info4': Movie.objects.filter(title="Movie4"), 'movie_info5': Movie.objects.filter(title="Movie5")})
+    return render(request,'showtimes.html', {'all_movies': Info.objects.all(), 'all_times': Movie.objects.all()})
+#, 'movie_info': Movie.objects.filter(title="Duke's Heroes"), 'movie_info2': Movie.objects.filter(title="Movie3"), 'movie_info3': Movie.objects.filter(title="Movie3"), 'movie_info4': Movie.objects.filter(title="Movie4"), 'movie_info5': Movie.objects.filter(title="Movie5")
 
 def store(request):
     return render(request,'store.html', {'store_item': Store.objects.all()})
