@@ -30,21 +30,37 @@
         </div>
         <div class="row">
             <div class="col-xs-6 col-xs-offset-3 text-center">
-                <p>Harkins Theatres is a family owned and operated business, founded and based in Arizona since
+                <p style="font-family: 'Open Sans', sans-serif !important; ">Sharkins Theatres is a family owned and operated business, founded and based in Arizona since
                     1933. With 30 locations in five states, Sharkins Theatres is the 5th largest theatre circuit in
                     North America. With more than 80 years of colorful history, Sharkins Theatres remains the
                     Southwest's premier entertainment company.
                 </p>
             </div>
         </div>
-        <div class="row">
-            <div class="col-xs-4 col-xs-offset-2 text-center">
-                <h2>Our Location</h2>
-                <div id="map-canvas" style="height:300px;"></div>
+        <div class="row" style="margin-bottom:30px; margin-top:20px;">
+            <div class="col-md-4 col-md-offset-2 col-xs-12 text-center">
+                <div class="panel">
+                    <div class="panel-head" style="background:#27ae60 !important; color:white; padding-bottom:5px; padding-top:5px;">
+                        <h2 style="background:#27ae60 !important; color:white; font-family: 'Open Sans', sans-serif !important; "> Our Location</h2>
+                    </div>
+                    <div class="panel-body" id="locationDiv" style="border:1px solid black;">
+                        <div id="map-canvas" style="height:300px;"></div>
+                    </div>
+                </div>
             </div>
-            <div class="col-xs-4 text-center">
-                <h2>Driving Directions</h2>
-
+            <div class="col-md-4 col-xs-12 text-center">
+                <div class="panel">
+                    <div class="panel-head" style="background:#27ae60 !important; color:white; padding-bottom:5px; padding-top:5px;">
+                        <h2 style="background:#27ae60 !important; color:white; font-family: 'Open Sans', sans-serif !important; "> Driving Directions</h2>
+                    </div>
+                    <div class="panel-body" id="directionDiv" style="border:1px solid black;">
+                        <h4>1. Turn west on 5th</h4>
+                        <h4>2. Take a right on Pleasant View Rd. Follow South.</h4>
+                        <h4>3.Turn Left on Riverbend Ave. Follow East.</h4>
+                        <h4>4. Turn Right on Corbin Road. Follow South</h4>
+                        <h4>5. Do lots of curves with your hands out the windows, make wooshing noises. Drive down weird hill path thingy to the park.</h4>
+                    </div>
+                </div>
             </div>
         </div>
 
@@ -56,6 +72,12 @@
 {% block js %}
 {#    All of the code to make the Google Map operate normally.#}
     $(document).ready(function(){
+    $(window).resize(function(){
+        $('#directionDiv').height($('#locationDiv').height());
+
+    });
+        $('#directionDiv').height($('#locationDiv').height());
+
         $(window).load(function(){
         initialize();
         });
