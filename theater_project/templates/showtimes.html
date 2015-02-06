@@ -13,11 +13,11 @@
             {% for movie in all_movies %}
 
                 <div class="row" style="margin-bottom:30px;">
-                    <div class="col-xs-3 text-center">
+                    <div class="col-md-3 text-center col-xs-12">
                         <img src="{{ STATIC_URL }}{{ movie.thumbnail }}" class="img-responsive center-block" alt=""/>
-                        <a style="margin-top:10px;" class="btn-primary btn " href="/movies">Movie Details</a>
+                        <a style="margin-top:10px; background:#101010 !important; border: #101010 !important;" class="btn-primary btn " href="/movies">Movie Details</a>
                     </div>
-                    <div class="col-xs-6">
+                    <div class="col-md-6 col-xs-12">
                         <h3 style="font-weight:800;">{{ movie.title }} <span style="font-weight:normal !important; font-size:20px;">{{ movie.rating}}</span> <span style="font-weight:normal !important; font-size:17px !important;">({{ movie.duration }} mins)</span></h3>
                         {% for info in all_times %}
                             {% if info.title == movie.title %}

@@ -11,12 +11,12 @@
     {#    Any content associated with the page will go inside of this block.    #}
     <div class="container" style="background:white; border-radius:5px;">
         <div class="row text-center">
-            <h2>Welcome to Sharkins Theaters!</h2>
+            <h2 style="font-family: 'Open Sans', sans-serif !important; ">Welcome to Sharkins Theaters!</h2>
+            <hr/>
         </div>
         <div class="row" style="margin-top:20px;">
             <div class="col-xs-1"></div>
             {% for movie in all_movies %}
-
                 <div class="col-xs-2">
                     <img src="{{ STATIC_URL }}{{ movie.thumbnail }}" class="img-responsive" alt=""/>
                 </div>
@@ -24,7 +24,9 @@
             {% endfor %}
         </div>
         <div class="row text-center">
-            <h2>About Us</h2>
+            <hr/>
+            <h2 style="font-family: 'Open Sans', sans-serif !important; ">About Us</h2>
+            <hr/>
         </div>
         <div class="row">
             <div class="col-xs-6 col-xs-offset-3 text-center">
