@@ -9,24 +9,18 @@
 
 {#    Any content associated with the page will go inside of this block.    #}
     <div class="container" style="background:white; border-radius:5px;">
-        <h3>Movie Details</h3>
+        <h2 style="font-family: 'Open Sans', sans-serif !important; ">Movie Details</h2>
         <hr/>
 
         {% for movie in all_movies %}
         <div class="row" style="margin-bottom:30px;">
-            <div class="col-xs-4">
-            {% if movie.thumbnail == "http://placehold.it/350x250" %}
-                <img src="http://placehold.it/350x250" class="img-responsive" alt=""/>
-
-            {% endif %}
-            {% if movie.thumbnail != "http://placehold.it/350x250" %}
-
-                 <img src="{{ STATIC_URL }}{{ movie.thumbnail }}" class="img-responsive" alt=""/>
-            {% endif %}
+            <div class="col-xs-3 text-center">
+                 <img src="{{ STATIC_URL }}{{ movie.thumbnail }}" class="img-responsive center-block" alt=""/>
+                <a class="btn-primary btn" href="/showtimes" style="margin-top:10px; background:#27ae60 !important; border:#27ae60 !important; ">Showtimes</a>
             </div>
             <div class="col-xs-6">
                 <h3 style="font-weight:800;">{{ movie.title }}</h3>
-                <p>{{movie.description  }}</p>
+                <p style="font-family: 'Open Sans', sans-serif !important; ">{{movie.description  }}</p>
             </div>
         </div>
         <hr/>
