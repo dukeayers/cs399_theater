@@ -12,7 +12,7 @@
 
 {#    Any content associated with the page will go inside of this block.    #}
     <div class="container" style="background:white; border-radius:5px;">
-        <h3>Current Deals</h3>
+        <h2 style="font-family: 'Open Sans', sans-serif !important; ">Current Deals</h2>
     <hr/>
     {% for item in store_item %}
         <div class="row" style="margin-bottom:30px;">
@@ -23,7 +23,7 @@
                 <h3 style="font-weight:800;">{{ item.item }}</h3>
                 {{item.description  }}
                <p> {{item.price  }}</p>
-                   <input class= "input" type="number" value="quantity" />
+                   <input class= "input" type="number" value="0" min=0 />
                 <button type="button" class="btn btn-primary" style="background:#27ae60 !important; border:1px solid #27ae60 !important;">Add to cart</button></p>
             </div>
         </div>

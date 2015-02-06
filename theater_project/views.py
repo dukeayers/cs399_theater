@@ -17,7 +17,7 @@ def showtimes(request):
 #, 'movie_info': Movie.objects.filter(title="Duke's Heroes"), 'movie_info2': Movie.objects.filter(title="Movie3"), 'movie_info3': Movie.objects.filter(title="Movie3"), 'movie_info4': Movie.objects.filter(title="Movie4"), 'movie_info5': Movie.objects.filter(title="Movie5")
 
 def store(request):
-    return render(request,'store.html', {'store_item': Store.objects.all()})
+    return render(request,'store.html', {'store_item': Store.objects.all(), 'all_movies': Info.objects.all()} )
 
 def team(request):
     return render(request,'team.html', {'all_movies': Info.objects.all()})
