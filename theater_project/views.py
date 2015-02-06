@@ -21,3 +21,6 @@ def store(request):
 
 def team(request):
     return render(request,'team.html', {'all_movies': Info.objects.all()})
+
+def source(request):
+    return render(request,'cited-sources.html')

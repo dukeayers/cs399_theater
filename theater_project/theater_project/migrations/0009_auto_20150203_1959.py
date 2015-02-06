@@ -35,6 +35,7 @@ def add_data(apps, schema_editor):
     Prices = ["$6.00", "$5.00", "$3.00", "$20.00", "$3.00", "$4.00"]
     ItemDescr = ["A general movie ticket for any movie you would like to see.", "A refillable cup that allows for 50 cent refills!", "Popcorn, but large!", "An awesome gift idea for any of your friends! Nevermind that it is literally made out of stale popcorn and the dreams of failed actors/actresses!", "Popcorn, but in a medium container!", "Did... Did someone just say... Candy? Oh.. I'm in."]
     ThumbLocationStore = ["store_items/ticket.jpg", "store_items/cup.JPG", "store_items/largepop.jpg", "store_items/tshirt.jpg", "store_items/medpop.jpg", "store_items/candy.jpg"]
+    Sources = ["http://mt-st.rfclipart.com/image/big/d4-e9-e5/old-cinema-tickets-Download-Royalty-free-Vector-File-EPS-10945.jpg", "http://www.partypro.com/mm_PARTYPRO_/Images/1PCU3894.JPG", "http://www.thegreenhead.com/imgs/xl/retro-ceramic-popcorn-bowl-xl.jpg", "http://image.spreadshirt.com/image-server/v1/products/1003421131/views/1,width=378,height=378,appearanceId=366/Movie-Theater-Items.jpg", "http://jumpnjax.com/wp-content/uploads/2013/08/Concessions-Popcorn-1.jpg" , "http://lgcdn.candyfavorites.com/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/5/6/561.jpg_1.jpg"]
 
     #Seeded data for the events page
     eTitle = ["Children's Film Marathon", "3D Animation Film Festival"]
@@ -74,7 +75,7 @@ def add_data(apps, schema_editor):
         data.save()
 
     for i in range(0, 6):
-        data = Store(item = Items[i], description = ItemDescr[i], price = Prices[i], thumbnail = ThumbLocationStore[i])
+        data = Store(item = Items[i], description = ItemDescr[i], price = Prices[i], thumbnail = ThumbLocationStore[i], source = Sources[i])
         data.save()
 
 class Migration(migrations.Migration):

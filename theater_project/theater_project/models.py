@@ -16,6 +16,7 @@ class Store(models.Model):
     description = models.CharField(max_length = 300)
     price = models.CharField(max_length = 40)
     thumbnail = models.CharField(max_length = 400)
+    source = models.CharField(max_length = 400)
 
 class Event(models.Model):
     title = models.CharField(max_length = 100)
